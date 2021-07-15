@@ -1,4 +1,5 @@
 import React, {Fragment, useState} from 'react'
+import Error from './Error'
 
 const Formulario = ({busqueda, setBusqueda, setConsultar}) => {
     
@@ -28,12 +29,11 @@ const Formulario = ({busqueda, setBusqueda, setConsultar}) => {
         setConsultar(true)
     }
     return (
-        <Fragment>
-            <h1>Formulario</h1>
+        <Fragment>            
             <form onSubmit={handleSubmit} method="post">
                 {
                 error 
-                ? <p className="red darken-4 error">Todos los campos son obligatorios</p> 
+                ? <Error mensaje="Todos los campos son obligatorios"/>
                 : null
                 }
                 <div className="input-field col s12">
